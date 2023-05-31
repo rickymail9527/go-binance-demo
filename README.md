@@ -2,9 +2,7 @@
 
 * Version 1.0.1
 
-### What is this repository for? ###
-
-接口文檔：
+官方接口文檔：
 https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams_CN.md
 
 Demo to wss://stream.binance.com:9443
