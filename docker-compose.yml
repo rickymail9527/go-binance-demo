@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  redis:
+    build:
+      context: redis
+      dockerfile: Dockerfile
+    image: redis:5.0.14-alpine
+    container_name: b-redis
+    hostname: b-redis
+    restart: always
+    networks:
+      - my-app-network
+    environment:
+      TZ: Asia/Taipei
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - './redis/data:/data'
+    stdin_open: true
+    tty: true
+
+networks:
+  my-app-network:
+    name: my-app-network
+    driver: bridge
